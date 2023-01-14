@@ -17,6 +17,8 @@ In this guide I explain how to properly configure your Minecraft server on Linux
 So that our server ends up running in the background all the time we use a tool called [tmux][link-tmux].
 We will go in details how to work properly with [tmux][link-tmux] and how we can use it properly for our purposes.
 
+We will look how to properly install the Java Runtime Environment (JRE) that we need for our Minecraft server.
+
 To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server is started/stopped.
 
 With that said, let's get started 😉
@@ -28,10 +30,23 @@ With that said, let's get started 😉
 
 I recommend the installation of the following programs/apps:
 
-- ROOT Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
-- SFTP access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
+- **ROOT** Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
+- **SFTP** access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
 
 I would suggest that you have basic knowledge in using the terminal 💻
+
+<br>
+
+> __Note__<br>
+> All commands we use in this guide will be executed with root privileges. That means I will **NOT** use `sudo` in front of each command!<br>
+> If you don't have root privileges you have to use all commands with `sudo`! Otherwise you will probably get a permission error.
+
+---
+
+## Install JRE
+> How to install JRE
+
+First we will install the Java Runtime Environment.
 
 ---
 
@@ -52,11 +67,11 @@ userdel -r <enter the wrong name here>
 ```
 <br>
 
-If you get the following error message you can ignore it.
-
-```
+> __Warning__<br>
+> If you get the following error message you can ignore it.
+> ```
 > userdel: <enter the wrong name here> mail spool (/var/mail/<enter the wrong name here>) not found
-```
+> ```
 
 ---
 
