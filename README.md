@@ -17,12 +17,18 @@ Minecraft Server Hosting on Linux ([Ubuntu Server 22.04.1 LTS][link-ubuntu-serve
 
 In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot, stop it on shutdown and manage it properly.
 
-So that our server ends up running in the background all the time we use a tool called [tmux][link-tmux].<br>
-We will go in details how to work properly with [tmux][link-tmux] and how we can use it properly for our purposes.
+> __Note__<br>
+> This guide covers the latest version of Minecraft. In our example, this would be **Minecraft Java 1.19.3**, but you can also use the guide for newer versions.
+> If anything big changes I will update the guide to the latest version.
 
 We will look how to properly install the Java Runtime Environment (JRE) that we need for our Minecraft server.
 
-To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server is started/stopped.
+We will add a new own minecraft user.
+
+That our server ends up running in the background all the time we use a tool called [tmux][link-tmux].<br>
+We will go in details how to work properly with [tmux][link-tmux] and how we can use it properly for our purposes.
+
+To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server get's started/stopped.
 
 With that said, let's get started 😉
 
@@ -90,9 +96,9 @@ apt-cache search --names-only 'openjdk-[0-9]+-jre-headless'
 
 <br>
 
-Use the following command to install the latest version of JRE.
+Use the following command to install the latest version of JRE. As an example `19` from our search from above.
 
-> `<version>` is a placeholder for the latest version.
+> `<version>` is a placeholder for the latest version. 
 
 ```sh
 apt install openjdk-<version>-jre-headless -y
@@ -144,7 +150,13 @@ userdel -r <enter the wrong name here>
 
 <br>
 
+Nice you have created the minecraft user. 👍
+
+<br>
+
 ---
+
+# 👇 WORK IN PROGRESS 👇
 
 ## Startup
 > How to configure your server to run at startup.
