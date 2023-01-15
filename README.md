@@ -11,13 +11,17 @@
 [link-sudo-command]: https://en.wikipedia.org/wiki/Sudo
 [link-regex]: https://en.wikipedia.org/wiki/Regular_expression 'RegEx'
 
+[badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
+[badge-warning]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/warning.svg 'Warning'
+
+
 # Minecraft Server
 ## Introduction
 Minecraft Server Hosting on Linux ([Ubuntu Server 22.04.1 LTS][link-ubuntu-server-lts]) - How its done.
 
 In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot, stop it on shutdown and manage it properly.
 
-> __Note__<br>
+> ![badge-info][badge-info]<br>
 > This guide covers the latest version of Minecraft. In our example, this would be **Minecraft Java 1.19.3**, but you can also use the guide for newer versions.
 > If anything big changes I will update the guide to the latest version.
 
@@ -48,7 +52,7 @@ I would suggest that you have basic knowledge in using the terminal 💻
 
 <br>
 
-> __Warning__<br>
+> ![badge-warning][badge-warning]<br>
 > All commands we use in this guide will be executed with root privileges. That means I will **NOT** use [`sudo`][link-sudo-command] in front of each command!<br>
 > If you don't have root privileges you have to use all commands with [`sudo`][link-sudo-command]! Otherwise you will probably get a permission error.
 
@@ -87,10 +91,9 @@ You can do that with the following command.
 java --version
 ```
 
-> __Note__<br>
+> ![badge-info][badge-info]<br>
 > If you get the following output you are good to go and do not need to install JRE. If not follow the next steps.
 > ```
-
 > openjdk 19.0.1 2022-10-18
 > OpenJDK Runtime Environment (build 19.0.1+10-Ubuntu-1ubuntu122.04)                     <-- This is the important line!
 > OpenJDK 64-Bit Server VM (build 19.0.1+10-Ubuntu-1ubuntu122.04, mixed mode, sharing)
@@ -104,7 +107,7 @@ To search for the latest version of JRE use the following command. We will use t
 apt-cache search --names-only 'openjdk-[0-9]+-jre-headless'
 ```
 
-> __Note__<br>
+> ![badge-info][badge-info]<br>
 > That will give you back something similar like the following.
 > ```
 > openjdk-11-jre-headless - OpenJDK-Java-Laufzeitumgebung, verwendet Hotspot JIT (ohne GUI)
@@ -124,7 +127,7 @@ Use the following command to install the latest version of JRE. As an example `1
 apt install openjdk-<version>-jre-headless -y
 ```
 
-> __Warning__<br>
+> ![badge-warning][badge-warning]<br>
 > If you get a similar error then just run the install command again.
 > ```
 > ...                                                       <-- Many error lines
@@ -162,7 +165,7 @@ If you accidentally add a wrong user you can remove it again with the following 
 userdel -r <enter the wrong name here>
 ```
 
-> __Warning__<br>
+> ![badge-warning][badge-warning]<br>
 > If you get the following error message you can ignore it.
 > ```
 > userdel: <the wrong name> mail spool (/var/mail/<the wrong name>) not found
