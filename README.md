@@ -69,25 +69,6 @@ apt update -y && apt upgrade -y
 
 <br>
 
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212541976-251ea981-a51d-43c1-9da8-2bad54fe7dda.svg) Check
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212542081-fe251ef5-5f32-4222-8535-90b4653648ec.svg) Check
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212542197-f25b5070-f6d4-4083-a630-22bd3607570f.svg) Check
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212542235-ed367204-0f3a-4887-a676-921d1ed00a0f.svg) Check
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212542301-3f643161-f8d5-4505-8e52-f6d97ffc96f9.svg) Check
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212542349-b0bccba5-9115-4f28-b92e-396d598bed16.svg) Check
-
-![check-circle](https://user-images.githubusercontent.com/62719703/212542381-3118e2c3-0d81-4f76-a696-043f7d51f3ce.svg) Check
-
-
-> __Check__
-
-
 Now your system is up to date.
 
 <br>
@@ -109,6 +90,7 @@ java --version
 > __Note__<br>
 > If you get the following output you are good to go and do not need to install JRE. If not follow the next steps.
 > ```
+
 > openjdk 19.0.1 2022-10-18
 > OpenJDK Runtime Environment (build 19.0.1+10-Ubuntu-1ubuntu122.04)                     <-- This is the important line!
 > OpenJDK 64-Bit Server VM (build 19.0.1+10-Ubuntu-1ubuntu122.04, mixed mode, sharing)
