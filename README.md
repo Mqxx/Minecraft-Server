@@ -13,6 +13,8 @@
 [link-regex]: https://en.wikipedia.org/wiki/Regular_expression 'RegEx'
 [link-purpurmc-minecraft]: https://purpurmc.org/ 'Purpur Minecraft Server'
 [link-vanilla-minecraft]: https://www.minecraft.net/en-us/download/server 'Vanilla Minecraft Server'
+[link-sftp-connect-to-server-1]: https://www.youtube.com/watch?v=vtfpzSdlcGM 'WinSCP Tutorial from Nerd Learn'
+[link-sftp-connect-to-server-2]: https://youtu.be/SNYnOYWoeAw?t=205 'FileZilla Tutorial from TechHut'
 
 <!-- badges -->
 [badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
@@ -195,7 +197,36 @@ Nice you have created the minecraft user. 👍
 
 ## Prepare Minecraft server .jar
 
-Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc-minecraft]. However, you can also use a pure [vanilla][link-vanilla-minecraft] server.
+Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc-minecraft]. However, you can also use a pure [vanilla][link-vanilla-minecraft] server. The steps are the same.
+
+<!-- info: how to use SFTP programms -->
+> ![badge-info][badge-info]<br>
+> How to connect to your server via SFTP you can watch [this tutorial from Nerd Learn (WinSCP)][link-sftp-connect-to-server-1] or [this tutorial from TechHut (FileZilla)][link-sftp-connect-to-server-2]. There are many other tutorials on how to transfer files via SFTP.
+
+Once you have downloaded the server .jar I would advise you to name it uniquely. For example, my server .jar that I downloaded is called `purpur-1.19.3-1894.jar`. The number behind the version usually describes the current build. So I would name the server .jar only `purpur-1.19.3.jar`. Make sure you don't use any spaces or special characters in the filename.
+
+After that use a SFTP program of your choice to put the server .jar in the directory `/home/minecraft`.
+
+After you have placed the server .jar in the directory `/home/minecraft` we check again that the server .jar is really in the right place.
+
+For this you can use the following command in the terminal.
+
+```sh
+ls /home/minecraft/
+```
+
+<!-- info: check location of server .jar file -->
+> ![badge-info][badge-info]<br>
+> If you get the following output, then the server .jar is in the right place.
+> ```
+> purpur-1.19.3.jar
+> ```
+
+Next we will run the server .jar once to create all the necessary files. You can do that with the following command.
+
+```sh
+
+```
 
 <br>
   
