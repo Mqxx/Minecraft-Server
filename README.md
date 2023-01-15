@@ -11,6 +11,7 @@
 [link-sftp]: https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol 'SFTP'
 [link-sudo-command]: https://en.wikipedia.org/wiki/Sudo
 [link-regex]: https://en.wikipedia.org/wiki/Regular_expression 'RegEx'
+[link-purpurmc]: https://purpurmc.org/ 'Purpur MC'
 
 <!-- badges -->
 [badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
@@ -26,7 +27,7 @@ Minecraft Server Hosting on Linux ([Ubuntu Server 22.04.1 LTS][link-ubuntu-serve
 
 In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot, stop it on shutdown and manage it properly.
 
-<!-- info: version -->
+<!-- info: minecraft version -->
 > ![badge-info][badge-info]<br>
 > This guide covers the latest version of Minecraft. In our example, this would be **Minecraft Java 1.19.3**, but you can also use the guide for newer versions.
 > If anything big changes I will update the guide to the latest version.
@@ -189,6 +190,14 @@ Nice you have created the minecraft user. 👍
 
 <br>
 
+---
+
+## Prepare Minecraft server .jar
+
+Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc]. However, you can also use a pure [vanilla][] server.
+
+<br>
+  
 ---
 
 # 👇 WORK IN PROGRESS 👇
