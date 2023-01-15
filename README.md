@@ -15,6 +15,7 @@
 [link-vanilla-minecraft]: https://www.minecraft.net/en-us/download/server 'Vanilla Minecraft Server'
 [link-sftp-connect-to-server-1]: https://www.youtube.com/watch?v=vtfpzSdlcGM 'WinSCP Tutorial from Nerd Learn'
 [link-sftp-connect-to-server-2]: https://youtu.be/SNYnOYWoeAw?t=205 'FileZilla Tutorial from TechHut'
+[link-java-parameters]: https://alvinalexander.com/blog/post/java/java-xmx-xms-memory-heap-size-control 'Java starting parameter'
 
 <!-- badges -->
 [badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
@@ -91,6 +92,7 @@ Now your system is up to date.
 ---
 
 ## Install Java Runtime Environment (JRE)
+
 > How to install Java Runtime Environment (JRE)
 
 First we will install the Java Runtime Environment.<br>
@@ -159,7 +161,8 @@ And you are done installing the JRE. 😀
 ---
 
 ## Setup Minecraft User
-> Properly set up minecraft user/directory under `/home` on linux.
+
+> Properly set up minecraft user/directory under `/home` on Linux.
 
 The next thing we do is use the [`useradd`][link-useradd-command] command to create a new user with a new home directory. We will call this user minecraft and use the user's `/home` directory to set up our server.
 
@@ -169,6 +172,7 @@ The next thing we do is use the [`useradd`][link-useradd-command] command to cre
 ```sh
 useradd -m minecraft
 ```
+
 <br>
 
 If you accidentally add a wrong user you can remove it again with the following command
@@ -205,11 +209,15 @@ Next, we download the latest minecraft server .jar file. Which server .jar you u
 
 Once you have downloaded the server .jar I would advise you to name it uniquely. For example, my server .jar that I downloaded is called `purpur-1.19.3-1894.jar`. The number behind the version usually describes the current build. So I would name the server .jar only `purpur-1.19.3.jar`. Make sure you don't use any spaces or special characters in the filename.
 
+<br>
+
 After that use a SFTP program of your choice to put the server .jar in the directory `/home/minecraft`.
   
 <!-- info: multiple server -->
 > ![badge-info][badge-info]<br>
 > If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the minecraft direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
+
+<br>
 
 After you have placed the server .jar in the directory `/home/minecraft` we check again that the server .jar is really in the right place.
 
@@ -227,16 +235,35 @@ ls /home/minecraft/
 > ```
 
 <br>
-  
+
 ---
 
 ## Create start .sh file
 
-Next, we will create a start script for our server .jar.
+Next, we need a start script for our server .jar.
   
-For this I will create a new file in the `/home/minecraft` directory with my SFTP program. Optionally you can also do the whole thing via the terminal. I name this file `start.sh`.
+For this we want to create a new file in the `/home/minecraft` directory with my SFTP program. Optionally you can also do the whole thing via the terminal. I name this file `start.sh`.
 
-After I have created the file I will make it executable. There are several ways to do this. Either with the following command via the terminal.
+Once you have created the `start.sh` file we need to add the following to the file. Open the file and insert the following commands.
+
+```sh
+#!/bin/bash
+
+workingDirectory=/home/minecraft
+
+cd $workingDirectory
+
+# run purpur.jar
+java -Xms5G -Xmx10G -jar $workingDirectory/purpur-1.19.3.jar -nogui
+```
+
+<!-- info: check location of server .jar file -->
+> ![badge-info][badge-info]<br>
+> Depending on your Linux server you have to adjust the parameters [`-Xms`][link-java-parameters] and [`-Xmx`][link-java-parameters].
+
+<br>
+
+After we have created the file I will make it executable. There are several ways to do this. Either with the following command via the terminal.
   
 ```sh
 chmod +rwx start.sh /home/minecraft/start.sh
@@ -250,6 +277,9 @@ Or you can use your SFPT program. <kbd>Right Click</kbd> on the `start.sh` file 
 | Group | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
 | Other | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
 
+<br>
+
+Now that we have made our file executable we can close it and we are done with our `start.sh` script. 👍
 
 <br>
   
