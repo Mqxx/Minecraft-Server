@@ -167,7 +167,7 @@ userdel -r <enter the wrong name here>
 ```
 
 > ![badge-warning][badge-warning]<br>
-> If you get the following error message you can ignore it.
+> If you get the following message you can ignore it.
 > ```
 > userdel: <the wrong name> mail spool (/var/mail/<the wrong name>) not found
 > ```
