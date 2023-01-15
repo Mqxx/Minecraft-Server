@@ -13,7 +13,7 @@
 
 [badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
 [badge-warning]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/warning.svg 'Warning'
-
+[badge-error]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/error.svg 'Error'
 
 # Minecraft Server
 ## Introduction
@@ -127,7 +127,7 @@ Use the following command to install the latest version of JRE. As an example `1
 apt install openjdk-<version>-jre-headless -y
 ```
 
-> ![badge-warning][badge-warning]<br>
+> ![badge-error][badge-error]<br>
 > If you get a similar error then just run the install command again.
 > ```
 > ...                                                       <-- Many error lines
