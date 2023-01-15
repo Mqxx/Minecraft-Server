@@ -159,7 +159,8 @@ useradd -m minecraft
 
 If you accidentally add a wrong user you can remove it again with the following command
 
-> `-r` removes the directory under `/home`
+> `-r` removes the directory under `/home`<br>
+> `<enter the wrong name here>` is a placeholder for the wrong name. 
 
 ```sh
 userdel -r <enter the wrong name here>
