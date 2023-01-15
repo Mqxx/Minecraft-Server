@@ -206,6 +206,10 @@ Next, we download the latest minecraft server .jar file. Which server .jar you u
 Once you have downloaded the server .jar I would advise you to name it uniquely. For example, my server .jar that I downloaded is called `purpur-1.19.3-1894.jar`. The number behind the version usually describes the current build. So I would name the server .jar only `purpur-1.19.3.jar`. Make sure you don't use any spaces or special characters in the filename.
 
 After that use a SFTP program of your choice to put the server .jar in the directory `/home/minecraft`.
+  
+<!-- info: multiple server -->
+> ![badge-info][badge-info]<br>
+> If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the minecraft direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
 
 After you have placed the server .jar in the directory `/home/minecraft` we check again that the server .jar is really in the right place.
 
@@ -221,12 +225,6 @@ ls /home/minecraft/
 > ```
 > purpur-1.19.3.jar
 > ```
-
-Next we will run the server .jar once to create all the necessary files. You can do that with the following command.
-
-```sh
-
-```
 
 <br>
   
