@@ -42,7 +42,7 @@ I would suggest that you have basic knowledge in using the terminal 💻
 
 <br>
 
-> __Note__<br>
+> __Warning__<br>
 > All commands we use in this guide will be executed with root privileges. That means I will **NOT** use [`sudo`][link-sudo-command] in front of each command!<br>
 > If you don't have root privileges you have to use all commands with [`sudo`][link-sudo-command]! Otherwise you will probably get a permission error.
 
@@ -50,7 +50,7 @@ I would suggest that you have basic knowledge in using the terminal 💻
 
 ---
 
-## Install JRE
+## Install Java Runtime Environment (JRE)
 > How to install Java Runtime Environment (JRE)
 
 First we will install the Java Runtime Environment.<br>
@@ -98,14 +98,18 @@ Use the following command to install the latest version of JRE.
 apt install openjdk-<version>-jre-headless -y
 ```
 
-> __Note__<br>
+> __Warning__<br>
 > If you get a similar error then just run the install command again.
 > ```
 > ...                                                       <-- Many error lines
 > E: Sub-process /usr/bin/dpkg returned an error code (1)   <-- End of error
 > ```
 
+<br>
+
 Confirm with <kbd>Enter</kbd> when asked which services should be restarted.
+
+And you are done installing the JRE. 😀
 
 <br>
 
@@ -114,7 +118,10 @@ Confirm with <kbd>Enter</kbd> when asked which services should be restarted.
 ## Setup Minecraft User
 > Properly set up minecraft user/directory under `/home` on linux.
 
-The first thing we do is use the [`useradd`][link-useradd-command] command to create a new user with a new home directory. We will call this user minecraft and use the user's `/home` directory to set up our server.
+The next thing we do is use the [`useradd`][link-useradd-command] command to create a new user with a new home directory. We will call this user minecraft and use the user's `/home` directory to set up our server.
+
+> `-m` is used to create a directory under `/home` for the minecraft user<br>
+> `minecraft` is the name of the user
 
 ```sh
 useradd -m minecraft
@@ -123,16 +130,19 @@ useradd -m minecraft
 
 If you accidentally add a wrong user you can remove it again with the following command
 
+> `-r` removes the directory under `/home`
+
 ```sh
 userdel -r <enter the wrong name here>
 ```
-<br>
 
 > __Warning__<br>
 > If you get the following error message you can ignore it.
 > ```
-> userdel: <enter the wrong name here> mail spool (/var/mail/<enter the wrong name here>) not found
+> userdel: <the wrong name> mail spool (/var/mail/<the wrong name>) not found
 > ```
+
+<br>
 
 ---
 
