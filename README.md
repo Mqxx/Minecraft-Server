@@ -230,6 +230,31 @@ ls /home/minecraft/
   
 ---
 
+## Create start .sh file
+
+Next, we will create a start script for our server .jar.
+  
+For this I will create a new file in the `/home/minecraft` directory with my SFTP program. Optionally you can also do the whole thing via the terminal. I name this file `start.sh`.
+
+After I have created the file I will make it executable. There are several ways to do this. Either with the following command via the terminal.
+  
+```sh
+chmod +rwx start.sh /home/minecraft/start.sh
+```
+
+Or you can use your SFPT program. <kbd>Right Click</kbd> on the `start.sh` file and navigate to **Properties**. In the **Properties** window you will find a table that looks something like this. Set the check marks according to the table.
+
+| ID    | Read                    | Write                   | Execute                 |
+|-------|:-----------------------:|:-----------------------:|:-----------------------:|
+| Owner | <ul><li>[x] R</li></ul> | <ul><li>[x] W</li></ul> | <ul><li>[x] X</li></ul> |
+| Group | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+| Other | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+
+
+<br>
+  
+---
+
 # 👇 WORK IN PROGRESS 👇
 
 ## Startup
