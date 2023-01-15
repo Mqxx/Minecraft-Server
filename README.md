@@ -1,12 +1,15 @@
-[link-tmux]: https://www.redhat.com/sysadmin/introduction-tmux-linux 'tmux - Terminal Multiplexer'
+[link-tmux]: https://en.wikipedia.org/wiki/Tmux 'tmux - Terminal Multiplexer'
 [link-ubuntu-server-lts]: https://ubuntu.com/download/server 'Ubuntu Server LTS'
-[link-systemd]: https://systemd.io 'Systemd - System and Service Manager'
+[link-systemd]: https://en.wikipedia.org/wiki/Systemd 'Systemd - System and Service Manager'
 [link-useradd-command]: https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command 'useradd [OPTIONS] <username>'
 [link-windows-terminal]: https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701 'Windows Terminal'
 [link-kde-konsole]: https://konsole.kde.org/ 'KDE Konsole'
 [link-win-scp]: https://winscp.net/eng/docs/lang:de 'WinSCP Client'
 [link-filezilla]: https://filezilla-project.org/ 'FileZilla Client'
-
+[link-root-user]: https://en.wikipedia.org/wiki/Superuser 'root User'
+[link-sftp]: https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol 'SFTP'
+[link-sudo-command]: https://en.wikipedia.org/wiki/Sudo
+[link-regex]: https://en.wikipedia.org/wiki/Regular_expression 'RegEx'
 
 # Minecraft Server
 ## Introduction
@@ -14,7 +17,7 @@ Minecraft Server Hosting on Linux ([Ubuntu Server 22.04.1 LTS][link-ubuntu-serve
 
 In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot, stop it on shutdown and manage it properly.
 
-So that our server ends up running in the background all the time we use a tool called [tmux][link-tmux].
+So that our server ends up running in the background all the time we use a tool called [tmux][link-tmux].<br>
 We will go in details how to work properly with [tmux][link-tmux] and how we can use it properly for our purposes.
 
 We will look how to properly install the Java Runtime Environment (JRE) that we need for our Minecraft server.
@@ -23,6 +26,8 @@ To start/stop our server properly we will use [systemd services][link-systemd]. 
 
 With that said, let's get started 😉
 
+<br>
+
 ---
 
 ## Requirements
@@ -30,23 +35,79 @@ With that said, let's get started 😉
 
 I recommend the installation of the following programs/apps:
 
-- **ROOT** Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
-- **SFTP** access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
+- [**ROOT**][link-root-user] Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
+- [**SFTP**][link-sftp] access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
 
 I would suggest that you have basic knowledge in using the terminal 💻
 
 <br>
 
 > __Note__<br>
-> All commands we use in this guide will be executed with root privileges. That means I will **NOT** use `sudo` in front of each command!<br>
-> If you don't have root privileges you have to use all commands with `sudo`! Otherwise you will probably get a permission error.
+> All commands we use in this guide will be executed with root privileges. That means I will **NOT** use [`sudo`][link-sudo-command] in front of each command!<br>
+> If you don't have root privileges you have to use all commands with [`sudo`][link-sudo-command]! Otherwise you will probably get a permission error.
+
+<br>
 
 ---
 
 ## Install JRE
-> How to install JRE
+> How to install Java Runtime Environment (JRE)
 
-First we will install the Java Runtime Environment.
+First we will install the Java Runtime Environment.<br>
+For this I would recommend that you first check if you already have the correct version of JRE installed.
+
+You can do that with the following command.
+
+```sh
+java --version
+```
+
+> __Note__<br>
+> If you get the following output you are good to go and do not need to install JRE. If not follow the next steps.
+> ```
+> openjdk 19.0.1 2022-10-18
+> OpenJDK Runtime Environment (build 19.0.1+10-Ubuntu-1ubuntu122.04)                     <-- This is the important line!
+> OpenJDK 64-Bit Server VM (build 19.0.1+10-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+> ```
+
+<br>
+
+To search for the latest version of JRE use the following command. We will use the [regular expression][link-regex] `[0-9]+` to search for any version.
+
+```sh
+apt-cache search --names-only 'openjdk-[0-9]+-jre-headless'
+```
+
+> __Note__<br>
+> That will give you back something similar like the following.
+> ```
+> openjdk-11-jre-headless - OpenJDK-Java-Laufzeitumgebung, verwendet Hotspot JIT (ohne GUI)
+> openjdk-17-jre-headless - OpenJDK-Java-Laufzeitumgebung, verwendet Hotspot JIT (ohne GUI)
+> openjdk-18-jre-headless - OpenJDK-Java-Laufzeitumgebung, verwendet Hotspot JIT (ohne GUI)
+> openjdk-8-jre-headless - OpenJDK-Java-Laufzeitumgebung, verwendet Hotspot JIT (ohne GUI)
+> openjdk-19-jre-headless - OpenJDK Java runtime, using Hotspot JIT (headless)                <-- This is the latest version that we want
+> ```
+
+<br>
+
+Use the following command to install the latest version of JRE.
+
+> `<version>` is a placeholder for the latest version.
+
+```sh
+apt install openjdk-<version>-jre-headless -y
+```
+
+> __Note__<br>
+> If you get a similar error then just run the install command again.
+> ```
+> ...                                                       <-- Many error lines
+> E: Sub-process /usr/bin/dpkg returned an error code (1)   <-- End of error
+> ```
+
+Confirm with <kbd>Enter</kbd> when asked which services should be restarted.
+
+<br>
 
 ---
 
