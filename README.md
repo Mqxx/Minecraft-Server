@@ -11,7 +11,8 @@
 [link-sftp]: https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol 'SFTP'
 [link-sudo-command]: https://en.wikipedia.org/wiki/Sudo
 [link-regex]: https://en.wikipedia.org/wiki/Regular_expression 'RegEx'
-[link-purpurmc]: https://purpurmc.org/ 'Purpur MC'
+[link-purpurmc-minecraft]: https://purpurmc.org/ 'Purpur Minecraft Server'
+[link-vanilla-minecraft]: https://www.minecraft.net/en-us/download/server 'Vanilla Minecraft Server'
 
 <!-- badges -->
 [badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
@@ -194,7 +195,7 @@ Nice you have created the minecraft user. 👍
 
 ## Prepare Minecraft server .jar
 
-Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc]. However, you can also use a pure [vanilla][] server.
+Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc-minecraft]. However, you can also use a pure [vanilla][link-vanilla-minecraft] server.
 
 <br>
   
