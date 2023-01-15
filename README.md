@@ -56,6 +56,44 @@ I would suggest that you have basic knowledge in using the terminal 💻
 
 ---
 
+## Update your system
+> Check if your system is up to date
+
+First we will update our system to the latest version
+
+You can do that with the following command.
+
+```sh
+apt update -y && apt upgrade -y
+```
+
+<br>
+
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212541976-251ea981-a51d-43c1-9da8-2bad54fe7dda.svg) Check
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212542081-fe251ef5-5f32-4222-8535-90b4653648ec.svg) Check
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212542197-f25b5070-f6d4-4083-a630-22bd3607570f.svg) Check
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212542235-ed367204-0f3a-4887-a676-921d1ed00a0f.svg) Check
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212542301-3f643161-f8d5-4505-8e52-f6d97ffc96f9.svg) Check
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212542349-b0bccba5-9115-4f28-b92e-396d598bed16.svg) Check
+
+![check-circle](https://user-images.githubusercontent.com/62719703/212542381-3118e2c3-0d81-4f76-a696-043f7d51f3ce.svg) Check
+
+
+> __Check__
+
+
+Now your system is up to date.
+
+<br>
+
+---
+
 ## Install Java Runtime Environment (JRE)
 > How to install Java Runtime Environment (JRE)
 
