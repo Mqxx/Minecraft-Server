@@ -279,7 +279,7 @@ ls /home/minecraft/
 
 <br>
 
-### Navigate in correct directory
+### Navigate to correct directory
 
 Next we will start the Minecraft server for the very first time to generate the `eula.txt` file. Use the following commands for this. First navigate into the `minecraft` directory.
 
