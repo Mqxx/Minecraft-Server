@@ -235,14 +235,57 @@ ls /home/minecraft/
 > ```
 
 <br>
+  
+Next we will start the Minecraft server for the very first time to generate the `eula.txt` file. Use the following commands for this. First navigate into the `minecraft` directory.
+
+```sh
+cd /home/minecraft/
+```
+
+After that start the Minecraft server with the following command. Make sure that you are still in the right directory!
+  
+```sh
+java -Xms5G -Xmx10G -jar /home/minecraft/purpur-1.19.3.jar -nogui
+```
+
+<!-- info: first server start -->
+> ![badge-info][badge-info]<br>
+> If you get the following message, then the `eula.txt` was created successfully.
+> ```
+> Downloading mojang_1.19.3.jar
+> Applying patches
+> Starting org.bukkit.craftbukkit.Main
+> System Info: Java 19 (OpenJDK 64-Bit Server VM 19.0.1+10-Ubuntu-1ubuntu122.04) Host: Linux 5.15.0-58-generic (amd64)
+> Loading libraries, please wait...
+> [19:44:08 INFO]: Building unoptimized datafixer
+> [19:44:10 ERROR]: Failed to load properties from file: server.properties                                               <-- You can ignore these lines
+> [19:44:10 WARN]: Failed to load eula.txt
+> [19:44:10 INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.               <-- This is the important line
+> ```
+
+Now you can open the `eula.txt`. In the last line you should see `eula=false`. You need to set the value to `eula=true`. This way you accept the eula!
+
+```
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://aka.ms/MinecraftEULA).
+#<Date>
+eula=false                                                                                                             <-- You need to set this line to true
+```
+
+<br>
+
+Now that we have accepted the `eula.txt` we can move on. 🏃‍♂️
+
+<br>
 
 ---
 
 ## Create start .sh file
 
+> How to create the `start.sh` file
+
 Next, we need a start script for our server .jar.
   
-For this we want to create a new file in the `/home/minecraft` directory with my SFTP program. Optionally you can also do the whole thing via the terminal. I name this file `start.sh`.
+For this we want to create a new text file in the `/home/minecraft` directory with my SFTP program. Optionally you can also do the whole thing via the terminal. I name this file `start.sh`.
 
 Once you have created the `start.sh` file we need to add the following to the file. Open the file and insert the following commands.
 
@@ -282,8 +325,32 @@ Or you can use your SFPT program. <kbd>Right Click</kbd> on the `start.sh` file 
 Now that we have made our file executable we can close it and we are done with our `start.sh` script. 👍
 
 <br>
-  
+
 ---
+  
+## Create console .sh file
+
+> How to create the `console.sh` file
+
+We are almost done. Next we just need to create a `console.sh` script so that we can connect to the console at any time after the server has started.
+
+<!-- info: script is optional -->
+> ![badge-info][badge-info]<br>
+> Thesetsp is optional. But for later steps it is just easier to execute the script that we are creating instead of writing the command into the console each time. Also, this way you don't have to remember the command and can just run the script to connect to the console.
+
+To create the `console.sh` script we first have to create a text file under the `/home/minecraft` directory again. I use my SFTP program again for that. We will name the file `console.sh`. But you can call it whatever you want.
+
+Once you have created the `consol.sh` file we need to add the following to the file. Open the file and insert the following command. This is the point where we use [`tmux`][link-tmux] for the very first time.
+
+> `-S` Socket path (We will use sockets instead of sessions to allow different accounts to access the console later.)
+
+```
+tmux -S /usr/local/tmux/shared/minecraft/survival.mc@host attach
+```
+
+
+
+
 
 # 👇 WORK IN PROGRESS 👇
 
