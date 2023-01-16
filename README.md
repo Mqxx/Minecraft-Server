@@ -58,14 +58,14 @@ With that said, let's get started 😉
 ## Requirements
 > Programms/Apps/Knowledge that you need
 
-# Apps
+### Apps
 
 I recommend the installation of the following programs/apps:
 
 - [**ROOT**][link-root-user] Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
 - [**SFTP**][link-sftp] access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
 
-# Knowledge
+### Knowledge
 
 I would suggest that you have basic knowledge in using the terminal 💻
 
