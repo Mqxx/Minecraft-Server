@@ -55,7 +55,22 @@ With that said, let's get started 😉
 
 ---
 
+## Links
+
+- 
+- 
+- 
+
+<br>
+
+
+
+
+
+---
+
 ## Requirements
+
 > Programms/Apps/Knowledge that you need
 
 ### Apps
