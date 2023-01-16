@@ -49,6 +49,10 @@ With that said, let's get started 😉
 
 <br>
 
+
+
+
+
 ---
 
 ## Requirements
@@ -70,6 +74,10 @@ I would suggest that you have basic knowledge in using the terminal 💻
 
 <br>
 
+
+
+
+
 ---
 
 ## Update your system
@@ -88,6 +96,10 @@ apt update -y && apt upgrade -y
 Now your system is up to date.
 
 <br>
+
+
+
+
 
 ---
 
@@ -158,6 +170,10 @@ And you are done installing the JRE. 😀
 
 <br>
 
+
+
+
+
 ---
 
 ## Setup Minecraft User
@@ -196,6 +212,10 @@ userdel -r <enter the wrong name here>
 Nice you have created the minecraft user. 👍
 
 <br>
+
+
+
+
 
 ---
 
@@ -242,6 +262,8 @@ Next we will start the Minecraft server for the very first time to generate the 
 cd /home/minecraft/
 ```
 
+<br>
+
 After that start the Minecraft server with the following command. Make sure that you are still in the right directory!
   
 ```sh
@@ -263,6 +285,8 @@ java -Xms5G -Xmx10G -jar /home/minecraft/purpur-1.19.3.jar -nogui
 > [19:44:10 INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.               <-- This is the important line
 > ```
 
+<br>
+
 Now you can open the `eula.txt`. In the last line you should see `eula=false`. You need to set the value to `eula=true`. This way you accept the eula!
 
 ```
@@ -276,6 +300,10 @@ eula=false                                                                      
 Now that we have accepted the `eula.txt` we can move on. 🏃‍♂️
 
 <br>
+
+
+
+
 
 ---
 
@@ -304,12 +332,14 @@ java -Xms5G -Xmx10G -jar $workingDirectory/purpur-1.19.3.jar -nogui
 > ![badge-info][badge-info]<br>
 > Depending on your Linux server you have to adjust the parameters [`-Xms`][link-java-parameters] and [`-Xmx`][link-java-parameters].
 
+Save the file.
+
 <br>
 
-After we have created the file I will make it executable. There are several ways to do this. Either with the following command via the terminal.
+After we have created and saved the file we will make it executable. There are several ways to do this. Either with the following command via the terminal.
   
 ```sh
-chmod +rwx start.sh /home/minecraft/start.sh
+chmod +rwx start.sh
 ```
 
 Or you can use your SFPT program. <kbd>Right Click</kbd> on the `start.sh` file and navigate to **Properties**. In the **Properties** window you will find a table that looks something like this. Set the check marks according to the table.
@@ -326,6 +356,10 @@ Now that we have made our file executable we can close it and we are done with o
 
 <br>
 
+
+
+
+
 ---
   
 ## Create console .sh file
@@ -336,17 +370,49 @@ We are almost done. Next we just need to create a `console.sh` script so that we
 
 <!-- info: script is optional -->
 > ![badge-info][badge-info]<br>
-> Thesetsp is optional. But for later steps it is just easier to execute the script that we are creating instead of writing the command into the console each time. Also, this way you don't have to remember the command and can just run the script to connect to the console.
+> These steps are optional. But for later usage it is just easier to execute the script that we are creating instead of writing the command into the console each time. Also, this way you don't have to remember the command and can just run the script to connect to the console.
 
 To create the `console.sh` script we first have to create a text file under the `/home/minecraft` directory again. I use my SFTP program again for that. We will name the file `console.sh`. But you can call it whatever you want.
 
-Once you have created the `consol.sh` file we need to add the following to the file. Open the file and insert the following command. This is the point where we use [`tmux`][link-tmux] for the very first time.
+Once you have created the `consol.sh` file we need to add the following to the file. Open the file and insert the following command. This is the point where we include [`tmux`][link-tmux] for the very first time.
 
-> `-S` Socket path (We will use sockets instead of sessions to allow different accounts to access the console later.)
+> `-S` Socket path (We will use sockets instead of sessions so that different accounts can access the console later.)
 
 ```
-tmux -S /usr/local/tmux/shared/minecraft/survival.mc@host attach
+tmux -S /usr/local/tmux/shared/minecraft/server attach
 ```
+
+<!-- info: multiple server sockets -->
+> ![badge-info][badge-info]<br>
+> Again if you want to run multiple minecraft servers at the same time you can specify a different socket path for each server there.<br>
+> As an example:<br>
+> `/usr/local/tmux/shared/minecraft/server1`<br>
+> `/usr/local/tmux/shared/minecraft/server2`<br>
+> You can also choose a different path, just make sure that the path is accessible for all users.
+
+Save the file.
+
+<br>
+
+After we have created and saved the file we will make it executable. Again there are several ways to do this. Use the following command.
+
+```sh
+chmod +rwx console.sh
+```
+
+Or use your SFTP program. Set the check marks according to the table.
+
+| ID    | Read                    | Write                   | Execute                 |
+|-------|:-----------------------:|:-----------------------:|:-----------------------:|
+| Owner | <ul><li>[x] R</li></ul> | <ul><li>[x] W</li></ul> | <ul><li>[x] X</li></ul> |
+| Group | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+| Other | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+
+<br>
+
+Now that we have made our file executable we can close it and we are done with our `console.sh` script. 💻
+
+<br>
 
 
 
