@@ -58,10 +58,14 @@ With that said, let's get started 😉
 ## Requirements
 > Programms/Apps/Knowledge that you need
 
+# Apps
+
 I recommend the installation of the following programs/apps:
 
 - [**ROOT**][link-root-user] Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
 - [**SFTP**][link-sftp] access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
+
+# Knowledge
 
 I would suggest that you have basic knowledge in using the terminal 💻
 
@@ -81,6 +85,7 @@ I would suggest that you have basic knowledge in using the terminal 💻
 ---
 
 ## Update your system
+
 > Check if your system is up to date
 
 First we will update our system to the latest version
@@ -107,6 +112,8 @@ Now your system is up to date.
 
 > How to install Java Runtime Environment (JRE)
 
+### Check version
+
 First we will install the Java Runtime Environment.<br>
 For this I would recommend that you first check if you already have the correct version of JRE installed.
 
@@ -127,6 +134,8 @@ java --version
 
 <br>
 
+### Serach for new version
+
 To search for the latest version of JRE use the following command. We will use the [regular expression][link-regex] `[0-9]+` to search for any version.
 
 ```sh
@@ -145,6 +154,8 @@ apt-cache search --names-only 'openjdk-[0-9]+-jre-headless'
 > ```
 
 <br>
+
+### Install lates version
 
 Use the following command to install the latest version of JRE. As an example `19` from our search from above.
 
@@ -180,6 +191,8 @@ And you are done installing the JRE. 😀
 
 > Properly set up minecraft user/directory under `/home` on Linux.
 
+### Add the minecraft user
+
 The next thing we do is use the [`useradd`][link-useradd-command] command to create a new user with a new home directory. We will call this user minecraft and use the user's `/home` directory to set up our server.
 
 > `-m` is used to create a directory under `/home` for the minecraft user<br>
@@ -190,6 +203,8 @@ useradd -m minecraft
 ```
 
 <br>
+
+### How to remove user
 
 If you accidentally add a wrong user you can remove it again with the following command
 
@@ -221,6 +236,10 @@ Nice you have created the minecraft user. 👍
 
 ## Prepare Minecraft server .jar
 
+> Download and prepare the server .jar
+
+### Download Purpur MC
+
 Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc-minecraft]. However, you can also use a pure [vanilla][link-vanilla-minecraft] server. The steps are the same.
 
 <!-- info: how to use SFTP programms -->
@@ -231,6 +250,8 @@ Once you have downloaded the server .jar I would advise you to name it uniquely.
 
 <br>
 
+### Put server .jar in directory
+
 After that use a SFTP program of your choice to put the server .jar in the directory `/home/minecraft`.
   
 <!-- info: multiple server -->
@@ -238,6 +259,8 @@ After that use a SFTP program of your choice to put the server .jar in the direc
 > If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the minecraft direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
 
 <br>
+
+### Check for server .jar location
 
 After you have placed the server .jar in the directory `/home/minecraft` we check again that the server .jar is really in the right place.
 
@@ -255,7 +278,9 @@ ls /home/minecraft/
 > ```
 
 <br>
-  
+
+### Navigate in correct directory
+
 Next we will start the Minecraft server for the very first time to generate the `eula.txt` file. Use the following commands for this. First navigate into the `minecraft` directory.
 
 ```sh
@@ -263,6 +288,8 @@ cd /home/minecraft/
 ```
 
 <br>
+
+### Start the first time
 
 After that start the Minecraft server with the following command. Make sure that you are still in the right directory!
   
@@ -286,6 +313,8 @@ java -Xms5G -Xmx10G -jar /home/minecraft/purpur-1.19.3.jar -nogui
 > ```
 
 <br>
+
+### Accept eula
 
 Now you can open the `eula.txt`. In the last line you should see `eula=false`. You need to set the value to `eula=true`. This way you accept the eula!
 
@@ -311,11 +340,15 @@ Now that we have accepted the `eula.txt` we can move on. 🏃‍♂️
 
 > How to create the `start.sh` file
 
+### Create file
+
 Next, we need a start script for our server .jar.
-  
+
 For this we want to create a new text file in the `/home/minecraft` directory with my SFTP program. Optionally you can also do the whole thing via the terminal. I name this file `start.sh`.
 
 Once you have created the `start.sh` file we need to add the following to the file. Open the file and insert the following commands.
+
+### Edit file
 
 ```sh
 #!/bin/bash
@@ -336,6 +369,8 @@ Save the file.
 
 <br>
 
+### Change permissions
+  
 After we have created and saved the file we will make it executable. There are several ways to do this. Either with the following command via the terminal.
   
 ```sh
@@ -366,6 +401,8 @@ Now that we have made our file executable we can close it and we are done with o
 
 > How to create the `console.sh` file
 
+### Create file
+
 We are almost done. Next we just need to create a `console.sh` script so that we can connect to the console at any time after the server has started.
 
 <!-- info: script is optional -->
@@ -373,6 +410,10 @@ We are almost done. Next we just need to create a `console.sh` script so that we
 > These steps are optional. But for later usage it is just easier to execute the script that we are creating instead of writing the command into the console each time. Also, this way you don't have to remember the command and can just run the script to connect to the console.
 
 To create the `console.sh` script we first have to create a text file under the `/home/minecraft` directory again. I use my SFTP program again for that. We will name the file `console.sh`. But you can call it whatever you want.
+
+<br>
+
+### Edit file
 
 Once you have created the `consol.sh` file we need to add the following to the file. Open the file and insert the following command. This is the point where we include [`tmux`][link-tmux] for the very first time.
 
@@ -393,6 +434,8 @@ tmux -S /usr/local/tmux/shared/minecraft/server attach
 Save the file.
 
 <br>
+
+### Change permissions
 
 After we have created and saved the file we will make it executable. Again there are several ways to do this. Use the following command.
 
