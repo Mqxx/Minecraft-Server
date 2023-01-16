@@ -112,7 +112,7 @@ Now your system is up to date.
 
 > How to install Java Runtime Environment (JRE)
 
-### Check version
+### Check current version
 
 First we will install the Java Runtime Environment.<br>
 For this I would recommend that you first check if you already have the correct version of JRE installed.
@@ -134,7 +134,7 @@ java --version
 
 <br>
 
-### Serach for new version
+### Serach for newest version
 
 To search for the latest version of JRE use the following command. We will use the [regular expression][link-regex] `[0-9]+` to search for any version.
 
