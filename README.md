@@ -15,6 +15,7 @@
 [link-vanilla-minecraft]: https://www.minecraft.net/en-us/download/server 'Vanilla Minecraft Server'
 [link-sftp-connect-to-server-1]: https://www.youtube.com/watch?v=vtfpzSdlcGM 'WinSCP Tutorial from Nerd Learn'
 [link-sftp-connect-to-server-2]: https://youtu.be/SNYnOYWoeAw?t=205 'FileZilla Tutorial from TechHut'
+[link-openjdk]: https://openjdk.org 'OpenJDK'
 [link-java-parameters]: https://alvinalexander.com/blog/post/java/java-xmx-xms-memory-heap-size-control 'Java starting parameter'
 
 <!-- badges -->
@@ -36,7 +37,7 @@ In this guide I explain how to properly configure your Minecraft server on Linux
 > This guide covers the latest version of Minecraft. In our example, this would be **Minecraft Java 1.19.3**, but you can also use the guide for newer versions.
 > If anything big changes I will update the guide to the latest version.
 
-We will look how to properly install the Java Runtime Environment (JRE) that we need for our Minecraft server.
+We will look how to properly install the [Java Runtime Environment (JRE)][link-openjdk] that we need for our Minecraft server.
 
 We will add a new own minecraft user.
 
@@ -57,9 +58,13 @@ With that said, let's get started 😉
 
 ## Links
 
-- 
-- 
-- 
+- Minecraft server .jar: [PurpurMC][link-purpurmc-minecraft], [Vanilla Minecraft][link-vanilla-minecraft]
+- Server software: [Ubuntu Server 22.04.1 LTS][link-ubuntu-server-lts]
+- Terminal apps/programms: [Windows Terminal][link-windows-terminal], [KDE Konsole][link-kde-konsole]
+- SFTP apps/programms: [WinSCP][link-win-scp], [FileZilla][link-filezilla]
+- Tmux: [tmux][link-tmux]
+- Systemd: [systemd services][link-systemd]
+- OpenJDK (Java): [OpenJDK][link-openjdk]
 
 <br>
 
@@ -129,7 +134,7 @@ Now your system is up to date.
 
 ### Check current version
 
-First we will install the Java Runtime Environment.<br>
+First we will install the [Java Runtime Environment][link-openjdk].<br>
 For this I would recommend that you first check if you already have the correct version of JRE installed.
 
 You can do that with the following command.
