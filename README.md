@@ -28,6 +28,7 @@
 # Minecraft Server
 
 ## Introduction
+
 Minecraft Server Hosting on Linux ([Ubuntu Server 22.04.1 LTS][link-ubuntu-server-lts]) - How its done.
 
 In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot, stop it on shutdown and manage it properly.
@@ -45,6 +46,12 @@ That our server ends up running in the background all the time we use a tool cal
 We will go in details how to work properly with [tmux][link-tmux] and how we can use it properly for our purposes.
 
 To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server get's started/stopped.
+
+## Important
+
+⚠ **Please read the individual sections before executing them so that you understand what the commands do!** ⚠
+
+<br>
 
 With that said, let's get started 😉
 
