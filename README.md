@@ -47,7 +47,7 @@ We will go in details how to work properly with [tmux][link-tmux] and how we can
 
 To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server get's started/stopped.
 
-## Important
+### Important
 
 ⚠ **Please read the individual sections before executing them so that you understand what the commands do!** ⚠
 
