@@ -380,6 +380,8 @@ For this we want to create a new text file in the `/home/minecraft` directory wi
 
 Once you have created the `start.sh` file we need to add the following to the file. Open the file and insert the following commands.
 
+<br>
+
 ### Edit file
 
 ```sh
