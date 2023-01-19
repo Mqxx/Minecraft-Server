@@ -607,7 +607,7 @@ systemctl start minecraft.service
 
 <!-- info: multiple service files -->
 > ![badge-info][badge-info]<br>
-> You can view the status of your service with the following command.<br>
+> You can view the status of your service with the following command. This will also show you errors if something is not working correctly.<br>
 > ```sh
 > systemctl status minecraft.service
 > ```
@@ -629,3 +629,20 @@ systemctl stop minecraft.service
 ```
 
 <br>
+
+
+
+
+
+---
+
+## Conclusion
+
+> Final words
+
+Your Minecraft server should now be fully set up. The server should start automatically on startup and stop automatically on shutdown. If anything in the guide is unclear let me know and I will try to improve it.
+
+
+
+
+
