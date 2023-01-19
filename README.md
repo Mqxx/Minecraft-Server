@@ -516,7 +516,7 @@ First we need to create a new `.service` file under `/etc/system/system`. We wil
 
 ### Edit file
 
-Once you have created the `consol.sh` file we need to add the following to the file. Open the file and insert the following command.
+Once you have created the `minecraft.service` file we need to add the following to the file. Open the file and insert the following.
 
 > `Description` This is the description of your service<br>
 > `Type` You can read more about why we use `Type=forking` [here][link-systemd-service]<br>
@@ -544,3 +544,31 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
+
+Save the file.
+
+<br>
+
+### Change permissions
+
+After we have created and saved the file we will make it executable. Again there are several ways to do this. For this you navigate into the `/etc/system/system` directory.
+
+```sh
+cd /etc/system/system
+```
+
+And execute the following command.
+
+```sh
+chmod +rwx minecraft.service
+```
+
+Or use your SFTP program. Set the check marks according to the table.
+
+| ID    | Read                    | Write                   | Execute                 |
+|-------|:-----------------------:|:-----------------------:|:-----------------------:|
+| Owner | <ul><li>[x] R</li></ul> | <ul><li>[x] W</li></ul> | <ul><li>[x] X</li></ul> |
+| Group | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+| Other | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+
+<br>
