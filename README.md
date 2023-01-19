@@ -2,7 +2,7 @@
 [link-tmux]: https://en.wikipedia.org/wiki/Tmux 'tmux - Terminal Multiplexer'
 [link-ubuntu-server-lts]: https://ubuntu.com/download/server 'Ubuntu Server LTS'
 [link-systemd]: https://en.wikipedia.org/wiki/Systemd 'Systemd - System and Service Manager'
-[link-systemd-service]: https://www.freedesktop.org/software/systemd/man/systemd.service.html 'Systemd Forking'
+[link-systemd-service]: https://www.freedesktop.org/software/systemd/man/systemd.service.html 'Systemd Service'
 [link-useradd-command]: https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command 'useradd [OPTIONS] <username>'
 [link-windows-terminal]: https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701 'Windows Terminal'
 [link-kde-konsole]: https://konsole.kde.org/ 'KDE Konsole'
@@ -518,14 +518,14 @@ First we need to create a new `.service` file under `/etc/system/system`. We wil
 
 Once you have created the `consol.sh` file we need to add the following to the file. Open the file and insert the following command.
 
-> `Description` This is the description of your service
-> `Type` You can read more about why we use `Type=forking` [here][link-systemd-service]
-> `WorkingDirectory` This is your working directory where the file will be executed
-> `ExecStartPre` This will be executed before your actual start file
-> `ExecStart` This is the path to the main startup file
-> `ExecStop` This is the path to the main stop file
-> `ExecStopPost` This will be executed after your stop file
-> `Restart` This specifies under which conditions the service should be restarted. We set it to `on-failure`. This means that the service restarts automatically in case of an error.
+> `Description` This is the description of your service<br>
+> `Type` You can read more about why we use `Type=forking` [here][link-systemd-service]<br>
+> `WorkingDirectory` This is your working directory where the file will be executed<br>
+> `ExecStartPre` This will be executed before your actual start file<br>
+> `ExecStart` This is the path to the main startup file<br>
+> `ExecStop` This is the path to the main stop file<br>
+> `ExecStopPost` This will be executed after your stop file<br>
+> `Restart` This specifies under which conditions the service should be restarted. We set it to `on-failure`. This means that the service restarts automatically in case of an error.<br>
 > `WantedBy` You can read more about why we use `WantedBy=multi-user.target` [here][link-systemd-service]
 
 ```
