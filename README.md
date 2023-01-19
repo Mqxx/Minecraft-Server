@@ -48,6 +48,8 @@ We will go in details how to work properly with [tmux][link-tmux] and how we can
 
 To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server get's started/stopped.
 
+<br>
+
 ### Important
 
 <!-- warning: sudo -->
@@ -96,6 +98,8 @@ I recommend the installation of the following programs/apps:
 
 - [**ROOT**][link-root-user] Console access to your server (direct access or SSH access using a terminal programm like [Windows Terminal][link-windows-terminal]/[KDE Konsole][link-kde-konsole])
 - [**SFTP**][link-sftp] access to your server (SFTP client like [WinSCP][link-win-scp]/[FileZilla][link-filezilla])
+
+<br>
 
 ### Knowledge
 
@@ -576,5 +580,52 @@ Or use your SFTP program. Set the check marks according to the table.
 | Owner | <ul><li>[x] R</li></ul> | <ul><li>[x] W</li></ul> | <ul><li>[x] X</li></ul> |
 | Group | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
 | Other | <ul><li>[x] R</li></ul> | <ul><li>[ ] W</li></ul> | <ul><li>[ ] X</li></ul> |
+
+<br>
+
+And you are done creating the `.service` file.
+
+<br>
+
+### Start and enable
+
+The last thing we have to do is to enable and start the `.service` file.
+
+Use the following command to enable the service to run automatically on startup.
+
+```sh
+systemctl enable minecraft.service
+```
+
+Use the following command to start the service.
+
+```sh
+systemctl start minecraft.service
+```
+
+<br>
+
+<!-- info: multiple service files -->
+> ![badge-info][badge-info]<br>
+> You can view the status of your service with the following command.<br>
+> ```sh
+> systemctl status minecraft.service
+> ```
+
+<br>
+
+### How to stop and disable
+
+Use the following command to disable the service so that it will no longer run automatically on startup.
+  
+```sh
+systemctl disable minecraft.service
+```
+
+Use the following command to stop the service.
+
+```sh
+systemctl stop minecraft.service
+```
 
 <br>
