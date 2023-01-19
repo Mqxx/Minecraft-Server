@@ -49,7 +49,9 @@ To start/stop our server properly we will use [systemd services][link-systemd]. 
 
 ### Important
 
-⚠ **Please read the individual sections before executing them so that you understand what the commands do!** ⚠
+<!-- warning: sudo -->
+> ![badge-warning][badge-warning]<br>
+> **Please read the individual sections before executing them so that you understand what the commands do!**
 
 <br>
 
