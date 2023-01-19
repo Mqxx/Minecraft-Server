@@ -218,7 +218,7 @@ And you are done installing the JRE. 😀
 
 ---
 
-## Setup Minecraft User
+## Setup minecraft user
 
 > Properly set up minecraft user/directory under `/home` on Linux.
 
@@ -271,7 +271,7 @@ Nice you have created the minecraft user. 👍
 
 ### Download Purpur MC
 
-Next, we download the latest minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc-minecraft]. However, you can also use a pure [vanilla][link-vanilla-minecraft] server. The steps are the same.
+Next, we download the latest Minecraft server .jar file. Which server .jar you use is up to you. In this guide I will use [purpurmc][link-purpurmc-minecraft]. However, you can also use a pure [vanilla][link-vanilla-minecraft] server. The steps are the same.
 
 <!-- info: how to use SFTP programms -->
 > ![badge-info][badge-info]<br>
@@ -287,7 +287,7 @@ After that use a SFTP program of your choice to put the server .jar in the direc
   
 <!-- info: multiple server -->
 > ![badge-info][badge-info]<br>
-> If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the minecraft direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
+> If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the `minecraft` direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
 
 <br>
 
@@ -456,7 +456,7 @@ tmux -S /usr/local/tmux/shared/minecraft/server attach
 
 <!-- info: multiple server sockets -->
 > ![badge-info][badge-info]<br>
-> Again if you want to run multiple minecraft servers at the same time you can specify a different socket path for each server there.<br>
+> Again if you want to run multiple Minecraft servers at the same time you can specify a different socket path for each server there.<br>
 > As an example:<br>
 > `/usr/local/tmux/shared/minecraft/server1`<br>
 > `/usr/local/tmux/shared/minecraft/server2`<br>
@@ -492,6 +492,23 @@ Now that we have made our file executable we can close it and we are done with o
 
 
 
+---
+
+## Setup startup service
+
+> How to setup the startup service file
+
+Lastly, we will look at how to create the startup service file so that our Minecraft server will automatically start up on startup and shut down on stop.
+
+First we need to create a new `minecraft.service` file under `/etc/system/system`.
+
+<!-- info: multiple service files -->
+> ![badge-info][badge-info]<br>
+> Again, if you want to run multiple Minecraft servers at the same time, I would recommend creating different `.service` files.<br>
+> As an example:<br>
+> `/etc/systemd/system/server1.service`<br>
+> `/etc/systemd/system/server2.service`
+  
 # 👇 WORK IN PROGRESS 👇
 
 ## Startup
