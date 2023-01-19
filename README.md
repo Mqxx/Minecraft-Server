@@ -636,6 +636,42 @@ systemctl stop minecraft.service
 
 ---
 
+## Connect to your Server
+
+### Server in private network
+
+If the server is in your private network you can use the following command to get the IPv4 address of the server.
+
+```sh
+hostname -I | awk '{print $1}'
+```
+
+This is the IPv4 address of your server. To connect to the Minecraft server on your server, you need to use the following address.
+
+```
+<IPv4>:<Port>
+```
+
+If you have not changed the port, it is set to `25565` by default. For example, your address to connect to the server would look like this.
+
+```
+1.2.3.4:25565   <-- This is just an example IPv4 adress, you need to use the adress you got from above
+```
+
+<br>
+
+### Server in public network
+
+For example, if you have rented your server and it is not on your private network, then you need to use the public IPv4 address you got from your provider. The port is is the same as above (`25565`).
+
+<br>
+
+
+
+
+
+---
+
 ## Conclusion
 
 > Final words
