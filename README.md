@@ -5,11 +5,11 @@
 [link-useradd-command]: https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command 'useradd [OPTIONS] <username>'
 [link-windows-terminal]: https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701 'Windows Terminal'
 [link-kde-konsole]: https://konsole.kde.org/ 'KDE Konsole'
-[link-win-scp]: https://winscp.net/eng/docs/lang:de 'WinSCP Client'
-[link-filezilla]: https://filezilla-project.org/ 'FileZilla Client'
+[link-win-scp]: https://en.wikipedia.org/wiki/WinSCP 'WinSCP Client'
+[link-filezilla]: https://en.wikipedia.org/wiki/FileZilla 'FileZilla Client'
 [link-root-user]: https://en.wikipedia.org/wiki/Superuser 'root User'
 [link-sftp]: https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol 'SFTP'
-[link-sudo-command]: https://en.wikipedia.org/wiki/Sudo
+[link-sudo-command]: https://en.wikipedia.org/wiki/Sudo 'Sudo prefix'
 [link-regex]: https://en.wikipedia.org/wiki/Regular_expression 'RegEx'
 [link-purpurmc-minecraft]: https://purpurmc.org/ 'Purpur Minecraft Server'
 [link-vanilla-minecraft]: https://www.minecraft.net/en-us/download/server 'Vanilla Minecraft Server'
@@ -64,6 +64,8 @@ With that said, let's get started 😉
 ---
 
 ## Links
+
+> Useful links to check out
 
 - Minecraft server .jar: [PurpurMC][link-purpurmc-minecraft], [Vanilla Minecraft][link-vanilla-minecraft]
 - Server software: [Ubuntu Server 22.04.1 LTS][link-ubuntu-server-lts]
