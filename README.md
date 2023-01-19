@@ -501,9 +501,19 @@ Now that we have made our file executable we can close it and we are done with o
 
 Lastly, we will look at how to create the startup service file so that our Minecraft server will automatically start up on startup and shut down on stop.
 
+### Navigate to correct directory
+
+Use the following commands for this. First navigate into the `/etc/system/system` directory.
+
+```sh
+cd /etc/system/system
+```
+
+<br>
+
 ### Create file
 
-First we need to create a new `.service` file under `/etc/system/system`. We will name this file `minecraft.service`
+Next we need to create a new `.service` file under `/etc/system/system`. We will name this file `minecraft.service`
 
 <!-- info: multiple service files -->
 > ![badge-info][badge-info]<br>
@@ -551,13 +561,7 @@ Save the file.
 
 ### Change permissions
 
-After we have created and saved the file we will make it executable. Again there are several ways to do this. For this you navigate into the `/etc/system/system` directory.
-
-```sh
-cd /etc/system/system
-```
-
-And execute the following command.
+After we have created and saved the file we will make it executable. Again there are several ways to do this. Execute the following command.
 
 ```sh
 chmod +rwx minecraft.service
