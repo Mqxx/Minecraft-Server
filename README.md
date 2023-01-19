@@ -1,5 +1,5 @@
 <!-- links -->
-[link-tmux]: https://en.wikipedia.org/wiki/Tmux 'tmux - Terminal Multiplexer'
+[link-tmux]: https://github.com/tmux/tmux/wiki 'tmux - Terminal Multiplexer'
 [link-ubuntu-server-lts]: https://ubuntu.com/download/server 'Ubuntu Server LTS'
 [link-systemd]: https://en.wikipedia.org/wiki/Systemd 'Systemd - System and Service Manager'
 [link-systemd-service]: https://www.freedesktop.org/software/systemd/man/systemd.service.html 'Systemd Service'
