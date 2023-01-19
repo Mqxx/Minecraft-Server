@@ -640,7 +640,7 @@ systemctl stop minecraft.service
 
 > Final words
 
-Your Minecraft server should now be fully set up. The server should start automatically on startup and stop automatically on shutdown. If anything in the guide is unclear let me know and I will try to improve it.
+Your Minecraft server should now be fully set up 🎉. The server should start automatically on startup and stop automatically on shutdown. If anything in the guide is unclear let me know and I will try to improve it.
 
 
 
