@@ -652,7 +652,7 @@ This is the IPv4 address of your server. To connect to the Minecraft server on y
 <IPv4>:<Port>
 ```
 
-If you have not changed the port, it is set to `25565` by default. For example, your address to connect to the server would look like this.
+If you have not changed the port, it is set to `25565` by default. For example, your address to connect to the server could look like this.
 
 ```
 1.2.3.4:25565   <-- This is just an example IPv4 adress, you need to use the adress you got from above
