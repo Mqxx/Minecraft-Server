@@ -616,13 +616,13 @@ systemctl start minecraft.service
 
 ### How to stop and disable
 
-Use the following command to disable the service so that it will no longer run automatically on startup.
+If you no longer want the service to start automatically, use the following command to disable it
   
 ```sh
 systemctl disable minecraft.service
 ```
 
-Use the following command to stop the service.
+You can use the following command to stop the service.
 
 ```sh
 systemctl stop minecraft.service
