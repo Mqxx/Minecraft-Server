@@ -550,10 +550,10 @@ Description=Minecraft server startup service.
 
 [Service]
 Type=forking
-WorkingDirectory=/home/minecraft/survival.mc@host
-ExecStartPre=/usr/bin/tmux -S /usr/local/tmux/shared/minecraft/survival.mc@host new-session -s 'survival.mc@host' -d
-ExecStart=/usr/bin/tmux -S /usr/local/tmux/shared/minecraft/survival.mc@host send '/home/minecraft/survival.mc@host/start.sh' Enter
-ExecStop=/usr/bin/tmux -S /usr/local/tmux/shared/minecraft/survival.mc@host send 'stop' Enter
+WorkingDirectory=/home/minecraft
+ExecStartPre=/usr/bin/tmux -S /usr/local/tmux/shared/minecraft/server new-session -s 'minecraft' -d
+ExecStart=/usr/bin/tmux -S /usr/local/tmux/shared/minecraft/server send '/home/minecraft/start.sh' Enter
+ExecStop=/usr/bin/tmux -S /usr/local/tmux/shared/minecraft/server send 'stop' Enter
 ExecStopPost=delay 5
 Restart=on-failure
 
