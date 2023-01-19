@@ -77,7 +77,7 @@ With that said, let's get started 😉
 - Terminal apps/programms: [Windows Terminal][link-windows-terminal], [KDE Konsole][link-kde-konsole]
 - SFTP apps/programms: [WinSCP][link-win-scp], [FileZilla][link-filezilla]
 - Tmux: [tmux][link-tmux]
-- Systemd: [systemd services][link-systemd]
+- Systemd: [systemd][link-systemd], [systemd services][link-systemd-service]
 - OpenJDK (Java): [OpenJDK][link-openjdk]
 
 <br>
