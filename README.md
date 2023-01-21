@@ -43,7 +43,7 @@ We will look how to properly install the [Java Runtime Environment (JRE)][link-o
 
 We will add a new own minecraft user.
 
-That our server ends up running in the background all the time we use a tool called [tmux][link-tmux].<br>
+We use a tool called [tmux][link-tmux], to let our server run in the background.<br>
 We will go in details how to work properly with [tmux][link-tmux] and how we can use it properly for our purposes.
 
 To start/stop our server properly we will use [systemd services][link-systemd]. This way we have full control over when our server get's started/stopped.
