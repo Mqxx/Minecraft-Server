@@ -19,11 +19,6 @@
 [link-openjdk]: https://openjdk.org 'OpenJDK'
 [link-java-parameters]: https://alvinalexander.com/blog/post/java/java-xmx-xms-memory-heap-size-control 'Java starting parameter'
 
-<!-- badges -->
-[badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
-[badge-warning]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/warning.svg 'Warning'
-[badge-error]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/error.svg 'Error'
-
 
 
 # Minecraft Server
@@ -173,7 +168,8 @@ java --version
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+> 
 > If you get the following output you are good to go and do not need to install JRE. If not follow the next steps.
 > ```
 > openjdk 19.0.1 2022-10-18
@@ -195,7 +191,8 @@ apt-cache search --names-only 'openjdk-[0-9]+-jre-headless'
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+> 
 > That will give you back something similar like the following.
 > ```
 > openjdk-11-jre-headless - OpenJDK-Java-Laufzeitumgebung, verwendet Hotspot JIT (ohne GUI)
@@ -221,8 +218,9 @@ apt install openjdk-<version>-jre-headless -y
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/error.svg">
 >   <img alt="Error" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/error.svg">
-> </picture><br>
-> If you get a similar error then just run the install command again.
+> </picture>
+> 
+> If you get a similar error then just run the install command again.<br>
 > ```
 > ...                                                       <-- Many error lines
 > E: Sub-process /usr/bin/dpkg returned an error code (1)   <-- End of error
@@ -274,7 +272,8 @@ userdel -r <enter the wrong name here>
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/warning.svg">
 >   <img alt="Warning" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/warning.svg">
-> </picture><br>
+> </picture>
+> 
 > If you get the following message you can ignore it.
 > ```
 > userdel: <the wrong name> mail spool (/var/mail/<the wrong name>) not found
@@ -304,7 +303,8 @@ Next, we download the latest Minecraft server .jar file. Which server .jar you u
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > How to connect to your server via SFTP you can watch [this tutorial from Nerd Learn (WinSCP)][link-sftp-connect-to-server-1] or [this tutorial from TechHut (FileZilla)][link-sftp-connect-to-server-2]. There are many other tutorials on how to transfer files via SFTP.
 
 Once you have downloaded the server .jar I would advise you to name it uniquely. For example, my server .jar that I downloaded is called `purpur-1.19.3-1894.jar`. The number behind the version usually describes the current build. So I would name the server .jar only `purpur-1.19.3.jar`. Make sure you don't use any spaces or special characters in the filename.
@@ -319,7 +319,8 @@ After that use a SFTP program of your choice to put the server .jar in the direc
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the `minecraft` direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
 
 <br>
@@ -338,7 +339,8 @@ ls /home/minecraft/
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > If you get the following output, then the server .jar is in the right place.
 > ```
 > purpur-1.19.3.jar
@@ -368,7 +370,8 @@ java -Xms5G -Xmx10G -jar /home/minecraft/purpur-1.19.3.jar -nogui
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > If you get the following message, then the `eula.txt` was created successfully.
 > ```
 > Downloading mojang_1.19.3.jar
@@ -437,7 +440,8 @@ java -Xms5G -Xmx10G -jar $workingDirectory/purpur-1.19.3.jar -nogui
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > Depending on your Linux server you have to adjust the parameters [`-Xms`][link-java-parameters] and [`-Xmx`][link-java-parameters].
 
 Save the file.
@@ -484,7 +488,8 @@ We are almost done. Next we just need to create a `console.sh` script so that we
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > These steps are optional. But for later usage it is just easier to execute the script that we are creating instead of writing the command into the console each time. Also, this way you don't have to remember the command and can just run the script to connect to the console.
 
 To create the `console.sh` script we first have to create a text file under the `/home/minecraft` directory again. I use my SFTP program again for that. We will name the file `console.sh`. But you can call it whatever you want.
@@ -505,7 +510,8 @@ tmux -S /usr/local/tmux/shared/minecraft/server attach
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > Again if you want to run multiple Minecraft servers at the same time you can specify a different socket path for each server there.<br>
 > As an example:<br>
 > `/usr/local/tmux/shared/minecraft/server1`<br>
@@ -568,7 +574,8 @@ Next we need to create a new `.service` file under `/etc/system/system`. We will
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > Again, if you want to run multiple Minecraft servers at the same time, I would recommend creating different `.service` files.<br>
 > As an example:<br>
 > `/etc/systemd/system/server1.service`<br>
@@ -655,7 +662,8 @@ systemctl start minecraft.service
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
-> </picture><br>
+> </picture>
+>
 > You can view the status of your service with the following command. This will also show you errors if something is not working correctly.<br>
 > ```sh
 > systemctl status minecraft.service
