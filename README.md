@@ -27,7 +27,7 @@
 
 Minecraft Server Hosting on Linux ([Ubuntu Server 22.04.1 LTS][link-ubuntu-server-lts]) - How its done.
 
-In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot, stop it on shutdown and manage it properly.
+In this guide I explain how to properly configure your Minecraft server on Linux, automatically start it on boot-up, stop it on shutdown and manage it properly.
 
 <!-- info: minecraft version -->
 
