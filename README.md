@@ -164,10 +164,10 @@ You can do that with the following command.
 java --version
 ```
 
-<!-- info: check if jre is already installed -->
+<!-- success: check if jre is already installed -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/success.svg">
+>   <img alt="Success" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/success.svg">
 > </picture>
 > 
 > If you get the following output you are good to go and do not need to install JRE. If not follow the next steps.
@@ -315,10 +315,10 @@ Once you have downloaded the server .jar I would advise you to name it uniquely.
 
 After that use a SFTP program of your choice to put the server .jar in the directory `/home/minecraft`.
   
-<!-- info: multiple server -->
+<!-- tip: multiple server -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/tip.svg">
+>   <img alt="Tip" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/tip.svg">
 > </picture>
 >
 > If you want to run multiple servers at the same time on your Linux server I would recommend you to create a subfolder in the `minecraft` direcory where you put your server. For example `/home/minecraft/survival` and `/home/minecraft/creative`. But make sure that you specify the correct paths in all later steps.
@@ -335,10 +335,10 @@ For this you can use the following command in the terminal.
 ls /home/minecraft/
 ```
 
-<!-- info: check location of server .jar file -->
+<!-- success: check location of server .jar file -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/success.svg">
+>   <img alt="Success" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/success.svg">
 > </picture>
 >
 > If you get the following output, then the server .jar is in the right place.
@@ -366,10 +366,10 @@ After that start the Minecraft server with the following command. Make sure that
 java -Xms5G -Xmx10G -jar /home/minecraft/purpur-1.19.3.jar -nogui
 ```
 
-<!-- info: first server start -->
+<!-- success: first server start -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/success.svg">
+>   <img alt="Success" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/success.svg">
 > </picture>
 >
 > If you get the following message, then the `eula.txt` was created successfully.
@@ -484,10 +484,10 @@ Now that we have made our file executable we can close it and we are done with o
 
 We are almost done. Next we just need to create a `console.sh` script so that we can connect to the console at any time after the server has started.
 
-<!-- info: script is optional -->
+<!-- tip: script is optional -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/tip.svg">
+>   <img alt="Tip" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/tip.svg">
 > </picture>
 >
 > These steps are optional. But for later usage it is just easier to execute the script that we are creating instead of writing the command into the console each time. Also, this way you don't have to remember the command and can just run the script to connect to the console.
@@ -506,10 +506,10 @@ Once you have created the `consol.sh` file we need to add the following to the f
 tmux -S /usr/local/tmux/shared/minecraft/server attach
 ```
 
-<!-- info: multiple server sockets -->
+<!-- tip: multiple server sockets -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/tip.svg">
+>   <img alt="Tip" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/tip.svg">
 > </picture>
 >
 > Again if you want to run multiple Minecraft servers at the same time you can specify a different socket path for each server there.<br>
@@ -570,10 +570,10 @@ cd /etc/system/system
 
 Next we need to create a new `.service` file under `/etc/system/system`. We will name this file `minecraft.service`
 
-<!-- info: multiple service files -->
+<!-- tip: multiple service files -->
 > <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
->   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/tip.svg">
+>   <img alt="Tip" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/tip.svg">
 > </picture>
 >
 > Again, if you want to run multiple Minecraft servers at the same time, I would recommend creating different `.service` files.<br>
@@ -658,7 +658,7 @@ systemctl start minecraft.service
 
 <br>
 
-<!-- info: multiple service files -->
+<!-- info: status service files -->
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/light-theme/info.svg">
 >   <img alt="Info" src="https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/dark-theme/info.svg">
